@@ -1,6 +1,13 @@
-.body{
+body{
 
 
 }
 
 
+.toggle-content{
+    display:none;
+}
+
+.toggle-content.isVisible{
+    display:inline-block;
+}

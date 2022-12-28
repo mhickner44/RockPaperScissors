@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet"   href="style.css" type="text/css">
 </head>
 <body>
-    <button class="rock">Rock</button>
-    <button class="paper">Paper</button>
-    <button class="scissors">Scissors</button>
+   
+   <div class="container">
+    <h1 class="toggle-content" id="gameOver">GAME OVER</h1>
+    <button class="toggle-content isVisible" id="rock">Rock</button>
+    <button  class="toggle-content isVisible" id="paper">Paper</button>
+    <button  class="toggle-content isVisible" id="scissors">Scissors</button>
 
-    <p class="results">i am the results paragraph</p>
-    <h2 class="userScore">Wins</h2>
-    <h2 class="compScore">Losses</h2>
-    <h3 class="drawScore">Draws</h2>
-    <h1 class="final">final message space</h1>
+    <p  class="toggle-content isVisible" id="results"></p>
+    <h2 id="userScore">Wins:</h2>
+    <h2 id="compScore">Losses:</h2>
+    <button class="toggle-content" id="restartBtn">New Game</button>
+    <h3  class="toggle-content isVisible" id="drawScore">Draws:</h2>
+    <h3  class="toggle-content isVisible" id="total">Total:</h2>
+
+</div>
 </body>
 </html>
