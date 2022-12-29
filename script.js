@@ -1,10 +1,11 @@
 let userInput = null;
-let results = null;
+let gameOutput = null;
 let userScore = 0;
 let compScore = 0;
 let draws = 0;
+let gamesPlayed = 0;
 
-///event listeneers
+///event listeners
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector('#scissors');
@@ -15,10 +16,10 @@ const losses = document.querySelector('#compScore');
 
 const drawScore = document.querySelector('#drawScore');
 const total = document.querySelector('#total');
-const restartBtn = document.createElement('button');
-const final = document.createElement('h1');
 
-const container = document.querySelector('.container');
+
+const all = document.querySelector('.container').childNodes;
+
 
 
 
@@ -30,13 +31,6 @@ function getComputerGuess() {
 
 
 function setHumanGuess(userThrow) {
-
-    //you have to input numbers 0 1 2  for now until the GUI version
-    //take the input from the button press 
-    //0 scissors 1 rock 2 paper
-
-
-    // if(this.id){}
     if (userThrow == "rock") {
         userInput = 1;
     } else if (userThrow == "paper") {
@@ -45,8 +39,6 @@ function setHumanGuess(userThrow) {
     } else {
         userInput = 0;
     }
-
-
 
 }
 
@@ -60,8 +52,8 @@ function playRound(userThrow, computerThrow) {
     let userWin = "You won";
     let compWin = "The computer won";
 
-    console.log(computerThrow);
-    console.log(userThrow);
+    console.log('comp throw'+computerThrow);
+    console.log('userthrow'+userInput);
 
 
     //decides if it was a draw 
@@ -101,70 +93,55 @@ function playRound(userThrow, computerThrow) {
 
 function newGame() {
     userInput = null;
-    results = null;
+    gameOutput = null;
     userScore = 0;
     compScore = 0;
     draws = 0;
-
-//   elements to be removed
-//   rock paper scissors buttons
-//   draws
-//   total gamesPlayed
-
-//   add 
-//   game over screen
-//   restart button
-
-//i need to do this for multiuple elements 
-toggle();
-
-
-
-
-
-    // //trying to hide it instead of remove them all together
-    // restartBtn.style.display = "block"
-    // final.style.display = "block";
-    // // container.removeChild(restartBtn);
-    // // container.removeChild(final);
-    // final.textContent = "GAME OVER";
+   gamesPlayed = 0;
+    
     // restartBtn.textContent = "New Game";
-
-
-
-
-
-
     wins.textContent = "Wins:";
     losses.textContent = "Losses:";
-
     drawScore.textContent = "Draws:";
     total.textContent = "Total:";
+    results.textContent = "";
 
+
+    toggle(all);
 }
 
 
 //toggle elements display
-function toggle(e){
-e.classList.toggle('isVisible');
+function toggle(e) {
+    //if its there remove it 
+    e.forEach((item) => {
+        if (item.classList == "toggle-content") {
 
+            item.classList.add('isVisible');
+        } else if (item.classList == "toggle-content isVisible") {
+    
+            item.classList.remove('isVisible');
+        }
+    });
+
+  
 }
 
 
 
 function game() {
-    let gamesPlayed = 0;
+   
 
-    setHumanGuess(this.classList.value);
+    setHumanGuess(this.id);
 
-    result = playRound(userInput, getComputerGuess());
-    if (result == "draw") {
+    gameOutput = playRound(userInput, getComputerGuess());
+    if (gameOutput == "draw") {
         // deducts a game so it plays 5 times if there are draws
         draws++;
         drawScore.textContent = "Draws " + draws;
         resultsDiv.textContent = "Draw!";
     } else {
-        if (result == "You won") {
+        if (gameOutput == "You won") {
             userScore++;
             resultsDiv.textContent = "You won"
             wins.textContent = "Wins:" + userScore;
@@ -180,18 +157,15 @@ function game() {
     total.textContent = "Total: " + gamesPlayed;
     //string for the output
     if (userScore == 1 || compScore == 1) {
-
-       //game over logic here for displaying
-
+        //toggles what we want on a page
+       toggle(all);
     }
 
 
 
 
+
 }
-
-
-
 
 
 
