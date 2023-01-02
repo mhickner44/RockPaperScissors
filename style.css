@@ -1,13 +1,76 @@
-body{
+@font-face {
+  font-family: arcade;
+  src: url(Arcade.ttf);
+}
+body {
+  background-color: black;
+  color: white;
+  margin: 20%;
+  font-family: arcade;
+  font-weight: 200;
+}
 
+.test{
+  font-family: arcade;
+  font: 100;
+}
+.container {
+  text-align: center;
+}
 
+.toggle-content {
+  display: none;
+}
+
+.toggle-content.isVisible {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#btnContainer img {
+  width: 25%;
+  height: 25%;
+  padding-bottom: 20px;
+  
+  
+}
+
+#btnContainer img:hover {
+  -webkit-filter: drop-shadow(5px 5px 20px darkred)
+   drop-shadow(-5px -5px 20px darkred);
+  filter: drop-shadow(5px 5px 20px darkred)
+   drop-shadow(-5px -5px 20px darkred);
+   width: 25.5%;
+  height: 25.5%;
+  padding-bottom: 0px;
 }
 
 
-.toggle-content{
-    display:none;
+#gameOver{
+  font-family: arcade;
+  font-size: 10em;
 }
 
-.toggle-content.isVisible{
-    display:inline-block;
+
+#restartBtn {
+  width: 20%;
+  height: 40px; /* setting the width */
+  margin: 0% auto;
+  padding:10px 0px;
+  
+  color:white;
+  background: linear-gradient(darkred, black);
+  text-shadow: 1px 1px 1px darkred, 2px 2px 1px darkred;
+   font-family: Helvetica, Arial, sans-serif;
+   font-weight: bold;
+border-radius: 1em;
+font-family: arcade;
+font-size: x-large;
+  
 }
+#restartBtn:hover{
+  -webkit-filter: drop-shadow(0px 0px 5px  darkred);
+  background: linear-gradient(black, darkred);
+    
+  }

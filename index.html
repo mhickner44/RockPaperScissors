@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="script.js" defer></script>
-    <link rel="stylesheet"   href="style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css" defer>
 </head>
-<body>
-   
-   <div class="container">
-    <h1 class="toggle-content" id="gameOver">GAME OVER</h1>
-    <button class="toggle-content isVisible" id="rock">Rock</button>
-    <button  class="toggle-content isVisible" id="paper">Paper</button>
-    <button  class="toggle-content isVisible" id="scissors">Scissors</button>
 
-    <p  class="toggle-content isVisible" id="results"></p>
-    <h2 id="userScore">Wins:</h2>
-    <h2 id="compScore">Losses:</h2>
-    <button class="toggle-content" id="restartBtn">New Game</button>
-    <h3  class="toggle-content isVisible" id="drawScore">Draws:</h2>
-    <h3   id="total">Total:</h2>
+<body>
+
+    <div class="container">
+        <h1 class="toggle-content isVisible" id="header">CHOOSE</h1>
+        <h2 class="toggle-content isVisible" id="results"> </h2>
+        <h1 class="toggle-content" id="gameOver">GAME OVER</h1>
+  
+        <div class="toggle-content isVisible" id="btnContainer">
+            <img src="images/theRock.png" id="rock"  alt="rock">
+            <img src="images/paper.png" id="paper"  alt="paper">
+            <img src="images/scissors.png" id="scissors"  alt="scissors">
+        </div>
+
+      
+        <div class="score">
+            <h1 id="userScore">Wins: </h2>
+            <h1 id="compScore">Losses: </h2>
+                   
+        </div>
+
+
+        <div class="toggle-content isVisible">
+            <h2 class="toggle-content isVisible" id="drawScore">Draws:</h2>
+            <h2 id="total">Total: </h2>
+        </div>
+
+      <button class="toggle-content" id="restartBtn">New Game</button>
     </div>
 </body>
+
 </html>

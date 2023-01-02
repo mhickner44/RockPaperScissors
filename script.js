@@ -100,10 +100,10 @@ function newGame() {
    gamesPlayed = 0;
     
     // restartBtn.textContent = "New Game";
-    wins.textContent = "Wins:";
-    losses.textContent = "Losses:";
-    drawScore.textContent = "Draws:";
-    total.textContent = "Total:";
+    wins.textContent = "Wins: ";
+    losses.textContent = "Losses: ";
+    drawScore.textContent = "Draws: ";
+    total.textContent = "Total: ";
     results.textContent = "";
 
 
@@ -156,7 +156,7 @@ function game() {
     gamesPlayed++;
     total.textContent = "Total: " + gamesPlayed;
     //string for the output
-    if (userScore == 1 || compScore == 1) {
+    if (userScore == 5 || compScore == 5) {
         //toggles what we want on a page
        toggle(all);
     }
