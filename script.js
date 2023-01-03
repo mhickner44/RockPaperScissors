@@ -162,7 +162,7 @@ function game() {
     gamesPlayed++;
     total.textContent = "Total: " + gamesPlayed;
 
-    if (userScore == 5 || compScore == 5) {
+    if (userScore == 3 || compScore == 3) {
 
         toggle(all);
     }
