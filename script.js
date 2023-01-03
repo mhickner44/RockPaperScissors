@@ -17,11 +17,17 @@ const losses = document.querySelector('#compScore');
 const drawScore = document.querySelector('#drawScore');
 const total = document.querySelector('#total');
 
-
+const images = document.querySelectorAll(".option");
 const all = document.querySelector('.container').childNodes;
 
 
 
+
+window.addEventListener("load", (event) => {
+    images.forEach(addMovement => {
+        addMovement.classList.add("move");
+    });
+});
 
 function getComputerGuess() {
     let rand = Math.floor(Math.random() * 3);
@@ -52,8 +58,8 @@ function playRound(userThrow, computerThrow) {
     let userWin = "You won";
     let compWin = "The computer won";
 
-    console.log('comp throw'+computerThrow);
-    console.log('userthrow'+userInput);
+    console.log('comp throw' + computerThrow);
+    console.log('userthrow' + userInput);
 
 
     //decides if it was a draw 
@@ -97,9 +103,9 @@ function newGame() {
     userScore = 0;
     compScore = 0;
     draws = 0;
-   gamesPlayed = 0;
-    
-    // restartBtn.textContent = "New Game";
+    gamesPlayed = 0;
+
+
     wins.textContent = "Wins: ";
     losses.textContent = "Losses: ";
     drawScore.textContent = "Draws: ";
@@ -113,30 +119,30 @@ function newGame() {
 
 //toggle elements display
 function toggle(e) {
-    //if its there remove it 
+
     e.forEach((item) => {
         if (item.classList == "toggle-content") {
 
             item.classList.add('isVisible');
         } else if (item.classList == "toggle-content isVisible") {
-    
+
             item.classList.remove('isVisible');
         }
     });
 
-  
+
 }
 
 
 
 function game() {
-   
+
 
     setHumanGuess(this.id);
 
     gameOutput = playRound(userInput, getComputerGuess());
     if (gameOutput == "draw") {
-        // deducts a game so it plays 5 times if there are draws
+
         draws++;
         drawScore.textContent = "Draws " + draws;
         resultsDiv.textContent = "Draw!";
@@ -155,10 +161,10 @@ function game() {
     }
     gamesPlayed++;
     total.textContent = "Total: " + gamesPlayed;
-    //string for the output
+
     if (userScore == 5 || compScore == 5) {
-        //toggles what we want on a page
-       toggle(all);
+
+        toggle(all);
     }
 
 
